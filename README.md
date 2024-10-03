@@ -1,5 +1,4 @@
-# Machine Learning Terapan | Stunting Toddler (Balita) Detection
-###### Created by : Fernando Michael Hebert Siregar
+# Laporan Proyek Machine Learning | Fernando Michael Hebert Siregar
 
 ***
 ## Domain Proyek
