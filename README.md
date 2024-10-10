@@ -1,5 +1,4 @@
-# Machine Learning Terapan | Stunting Toddler (Balita) Detection
-###### Created by : Fernando Michael Hebert Siregar
+# Laporan Proyek Machine Learning - Fernando Michael Hebert Siregar
 
 ***
 ## Domain Proyek
@@ -38,7 +37,6 @@ Dataset yang digunakan disini berasal dari website Kaggle dengan nama dataset [S
 | ------ | ------ |
 | Judul | [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows)  |
 | Lisensi | [MIT](plugins/github/README.md) |
-| Google Drive | [plugins/googledrive/README.md] |
 | Jenis Data | CSV |
 | Ukuran | 3.14 MB |
 | Jumlah baris dan kolom | 120999 Baris x 4 Kolom |
