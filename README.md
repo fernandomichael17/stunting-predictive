@@ -46,5 +46,18 @@ Dataset ini berisi data mengenai balita, dengan beberapa fitur-fitur diantaranya
 * Tinggi badan (cm) : Tinggi badan anak dalam centimeter
 * Status Gizi : Status gizi yang dikategorikan menjadi 4 status - 'severely stunting', 'stunting', 'normal', dan 'tinggi'. 'Severely stunting' menunjukkan kondisi sangat serius (<-3 SD), 'stunting' menunjukkan kondisi stunting (-3 SD sd <-2 SD), 'normal' mengindikasikan status gizi yang sehat (-2 SD sd +3 SD), dan 'tinggi' (height) menunjukkan pertumbuhan di atas rata-rata (>+3 SD).
 
-Untuk lebih mengenal data disini hal pertama yang di lakukan adalah mengecek Nilai Null atau kosong dan juga Outlier yang akan mengganggu kegiatan Modelling nantinya. Namun pada data ini tidak ditemukan data null namun terdapat data outlier pada Tinggi Badan, sehingga disini akan melakukan visualisasi menggunakan Boxplot untuk mengeceknya.
+### Mengecek nilai null
+Untuk lebih mengenal data disini hal pertama yang di lakukan adalah mengecek Nilai Null atau kosong namun pada data ini tidak terdapat data kosong atau null
+
+### Mengecek Outlier
+Selanjutnya adalah mengecek adanya outlier dalam data. Outlier sendiri didapat dengan menghitung batas bawah dan batas atas dari data yang dimiliki. Dengan rumus : <br>
+Q1 : merupakan nilai quantile pertama atau nilai yang terletak pada posisi ke 25% dalam data<br>
+Q2 : merupakan nilai quantile ketiga atau nilai yang terletak pada posisi ke 75% dalam data<br>
+IQR : rentang antara Q1 sampai dengan Q3<br>
+Batas bawah : Q1 - (1.5 x IQR)<br>
+Batas atas : Q3 + (1.5 x IQR)<br>
+Untuk melakukan pengecekan agar lebih mudah disini dibuatlah sebuah visualisasi box plot.<br>
 ![box-plot](https://private-user-images.githubusercontent.com/113835044/375197968-a9d49123-3f26-4e51-8988-6ebf3ef2de0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg1Mjk3NjQsIm5iZiI6MTcyODUyOTQ2NCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk3OTY4LWE5ZDQ5MTIzLTNmMjYtNGU1MS04OTg4LTZlYmYzZWYyZGUwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxMFQwMzA0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNTRkNzM1NGE4ZDZkOTc4MTI3OTJjYWQwNzFjMTljN2NhNzVhMjAwZjUwMjY2YzEyMTU0MzU0MzRhODMwYzFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.wthiX2v2pCil4VODDfnqJSEyn-DpTIpgYUUAuUl3swA)
+
+<br>
+dari hasil boxplot diatas terlihat bahwa adanya oulier pada kolom tinggi badan, sehingga harus dihapus.
