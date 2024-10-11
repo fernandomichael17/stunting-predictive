@@ -69,19 +69,22 @@ Dataset yang didapatkan ini berisi data mengenai balita dengan beberap fitur-fit
 Untuk lebih mengenal data disini hal pertama yang di lakukan adalah mengecek Nilai Null atau kosong namun pada data ini tidak terdapat data kosong atau null
 
 ### Mengecek Outlier
-Selanjutnya adalah mengecek adanya outlier dalam data. Outlier sendiri didapat dengan menghitung batas bawah dan batas atas dari data yang dimiliki. Dengan rumus : <br>
-Q1 : merupakan nilai quantile pertama atau nilai yang terletak pada posisi ke 25% dalam data<br>
-Q2 : merupakan nilai quantile ketiga atau nilai yang terletak pada posisi ke 75% dalam data<br>
-IQR : rentang antara Q1 sampai dengan Q3 dengan rumus :
+Selanjutnya adalah mengecek adanya outlier dalam data. Outlier sendiri didapat dengan menghitung batas bawah dan batas atas dari data yang dimiliki. Yang pertama adalah mencari QI, Q3, dan IQR dari masing-masing kolom pada data. Untuk mencari IQR sendiri merupakan rentang antara Q1 sampai dengan Q3 dengan rumus :
+
 
 $$IQR = Q_3 - Q_1$$
 
+* Q1 : merupakan nilai quantile pertama atau nilai yang terletak pada posisi ke 25% dalam data
+* Q3 : merupakan nilai quantile ketiga atau nilai yang terletak pada posisi ke 75% dalam data
+<br>
+
+Batas bawah dan batas atas sendiri didapatkan dengan : <br>
 Batas bawah : Q1 - (1.5 x IQR)<br>
 Batas atas : Q3 + (1.5 x IQR) <br>
 
 
 
-Untuk melakukan pengecekan agar lebih mudah disini dibuatlah sebuah visualisasi box plot.<br>
+Namun disini untuk mempermudah melakukan pengecekan outlier terhadap masing-masing kolom maka dibuatlah sebuah visualisasi box plot seperti pada gambar dibawah ini.<br>
 <br>
 ![box-plot](https://private-user-images.githubusercontent.com/113835044/375197968-a9d49123-3f26-4e51-8988-6ebf3ef2de0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg1Mjk3NjQsIm5iZiI6MTcyODUyOTQ2NCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk3OTY4LWE5ZDQ5MTIzLTNmMjYtNGU1MS04OTg4LTZlYmYzZWYyZGUwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxMFQwMzA0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNTRkNzM1NGE4ZDZkOTc4MTI3OTJjYWQwNzFjMTljN2NhNzVhMjAwZjUwMjY2YzEyMTU0MzU0MzRhODMwYzFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.wthiX2v2pCil4VODDfnqJSEyn-DpTIpgYUUAuUl3swA)
 
@@ -90,4 +93,5 @@ dari hasil boxplot diatas terlihat bahwa adanya outlier pada kolom tinggi badan,
 
 ### Univariate Analysis
 ![eda-1](https://private-user-images.githubusercontent.com/113835044/375198591-c72ce087-4bcc-4734-a1ef-b9b0217b0bed.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg2MTY4MDMsIm5iZiI6MTcyODYxNjUwMywicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTkxLWM3MmNlMDg3LTRiY2MtNDczNC1hMWVmLWI5YjAyMTdiMGJlZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxMVQwMzE1MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZWVjNTk4MGM3MGU4ZWNmYWE0YjI2ZDQ1NjgzZmQ3NWFkZjVjNDY1MjgwNWQ4ZmZjZmQzZjYyYThjMjExZTQzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.p5Mj-h2q9IoeYg-BUfs3nX6WssSvDORc34n1hfazRns)
+<br>
 Dari hasil visualisasi grafik diatas dapat diketahui bahwa dsitribusi data pada jenis kelamin perempuan dan laki-laki normal seimbang, dengan kurang lebih masing-masing pada perempuan berjumlah . 
