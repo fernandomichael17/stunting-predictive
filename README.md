@@ -19,17 +19,27 @@ Sumber :
 ***
 ## Business Understanding
 ***
+Tujuan dari pengembangan model prediksi ini adalah untuk membantu orang tua dan petugas kesehatan dalam mendeteksi gejala stunting pada balita secara cepat dan akurat. Dengan mengenali tanda-tanda awal, tindakan preventif dan intervensi medis dapat segera diambil guna meningkatkan kualitas kesehatan anak-anak. Dibutuhkan sebuah solusi yang dapat mengidentifikasi balita yang berpotensi mengalami stunting berdasarkan data seperti pertumbuhan fisik (berat badan, tinggi badan), usia, dan faktor-faktor lainnya.
 ### Problem Statements
-1. Pernyataan Masalah 1 : Bagaimana mendeteksi gejala stunting pada balita menggunakan model machine learning dari fitur-fitur yang ada?
-2. Pernyataan Masalah 2 : Bagaimana cara mengetahui bahwa model yang dibuat dapat benar-benar dikatakan baik dalam memprediksi gejala stunting pada anak sehingga dapat diterapkan ? 
+1. Bagaimana mendeteksi gejala stunting pada balita menggunakan model machine learning dari fitur-fitur yang ada?
+2. Dari model yang dilatih model mana yang memiliki akurasi paling baik ?
+3. Bagaimana cara mengetahui bahwa model yang dibuat dapat benar-benar dikatakan baik dalam memprediksi gejala stunting pada anak sehingga dapat diterapkan ? 
 ***
 ### Goals
 1. Membangun model machine learning yang mampu mengenali gejala stunting berdasarkan faktor-faktor seperti tinggi badan, Jenis Kelamin, serta Usia (Umur), dan juga Status Gizi sebagai variabel target untuk diprediksi.
 2. Membuat sebuah evaluasi dengan beberapa parameter sehingga hasil yang diperoleh dari model dapat dipercaya untuk diterapkan.
 ***
 ### Solution Statements
-1. Menggunakan algoritma machine learning seperti Random Forest, XGBoost, Decision Tree untuk membandingkan performa model dalam mendeteksi gejala stunting.
-2. Menggunakan metrik evaluasi seperti accuracy, precision, dan recall untuk mengukur kinerja setiap model dalam mendeteksi gejala stunting.
+1. Membandingkan Beberapa Algoritma Machine Learning <br>
+Untuk mendeteksi gejala stunting pada balita, akan digunakan beberapa algoritma machine learning, yaitu:
+* Random Forest, yang mampu menangani dataset dengan banyak fitur dan menghasilkan prediksi yang robust.
+* XGBoost, yang dikenal sebagai salah satu algoritma boosting yang sangat efisien dalam menangani data dengan ketidakseimbangan kelas.
+* Decision Tree, sebagai algoritma dasar yang mudah diinterpretasikan dan digunakan sebagai benchmark.
+2. Evaluasi Model dengan Metrik yang Relevan <br>
+Setiap model akan diukur menggunakan metrik evaluasi yang dapat menggambarkan performa model dalam menangani kasus deteksi gejala stunting:
+* Accuracy: Mengukur persentase prediksi benar dari seluruh prediksi.
+* Precision: Mengukur akurasi dari prediksi positif yang diberikan oleh model.
+* Recall: Mengukur seberapa baik model dapat mendeteksi kasus stunting (true positive rate).
 ***
 ## Data Understanding
 Dataset yang digunakan disini berasal dari website Kaggle dengan nama dataset [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows). Dataset ini merupakan kumpulan data berdasarkan rumus z-score penentuan stunting menurut WHO (World Health Organization), yang berfokus pada deteksi stunting pada balita (bayi dibawah lima tahun). Dataset ini terdiri dari 121.000 baris data, yang merinci informasi mengenai umur, jenis kelamin, tinggi badan, dan status gizi balita. Dataset ini bertujuan untuk membantu peneliti, ahli gizi, dan pembuat kebijakan dalam memahami dan mengatasi masalah stunting pada anak-anak di bawah lima tahun.dengan penjabaran sebagai berikut : 
