@@ -43,14 +43,21 @@ Setiap model akan diukur menggunakan metrik evaluasi yang dapat menggambarkan pe
 ***
 ## Data Understanding
 Dataset yang digunakan disini berasal dari website Kaggle dengan nama dataset [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows). Dataset ini merupakan kumpulan data berdasarkan rumus z-score penentuan stunting menurut WHO (World Health Organization), yang berfokus pada deteksi stunting pada balita (bayi dibawah lima tahun). Dataset ini terdiri dari 121.000 baris data, yang merinci informasi mengenai umur, jenis kelamin, tinggi badan, dan status gizi balita. Dataset ini bertujuan untuk membantu peneliti, ahli gizi, dan pembuat kebijakan dalam memahami dan mengatasi masalah stunting pada anak-anak di bawah lima tahun.dengan penjabaran sebagai berikut : 
-| Bagian | Keterangan |
+| Bagian | Keterangan | 
 | ------ | ------ |
 | Judul | [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows)  |
 | Lisensi | [MIT](plugins/github/README.md) |
 | Jenis Data | CSV |
 | Ukuran | 3.14 MB |
 | Jumlah baris dan kolom | 120999 Baris x 4 Kolom |
-Dataset ini berisi data mengenai balita, dengan beberapa fitur-fitur diantaranya : 
+<br>
+Dataset yang didapatkan ini berisi data mengenai balita dengan beberap fitur-fitur yang dijabarkan diantaranya : 
+| No | Kolom | Jumlah | Tipe Data |
+| ------ | ------ | ------ | ------ |
+| 1 | Umur (bulan) | 120999 | int64 |
+| 2 | Jenis Kelamin | 120999 | object |
+| 3 | Tinggi Badan (cm) | 120999 | float64 |
+| 4 | Status Gizi | 120999 | object | 
 * Umur :Merupakan umur anak dalam hitungan bulan
 * Jenis Kelamin : Jenis Kelamin anak
 * Tinggi badan (cm) : Tinggi badan anak dalam centimeter
