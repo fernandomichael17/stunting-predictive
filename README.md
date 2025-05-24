@@ -246,7 +246,7 @@ Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adal
 
 #### Confusion Matrix
 
-![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/375198598-0f3a2b8c-4d1e-4a5f-8b7c-6d9e0f1a2b5c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTQzNTMsIm5iZiI6MTc0ODA1NDA1MywicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTg2LTAzYjA2ZGIwLTQyYjItNDYxNy05YjA5LWI5ZGUwZjEwMmQyNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjM4MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZmU2YjA2OTg2NzA4NmE5NjYxNDUzODg2YjA5NmU4NjkzZjEwZjYxZjU2ZjE4OTg3NzU5ZTIzNmU4NWJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.7qKqHhVnqv7r7s8nqkK7rOeV)
+![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210781-c0bd6fa7-e9b8-4cf8-af44-44a76f064841.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTU4MzYsIm5iZiI6MTc0ODA1NTUzNiwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwNzgxLWMwYmQ2ZmE3LWU5YjgtNGNmOC1hZjQ0LTQ0YTc2ZjA2NDg0MS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZGE3MjM5ODg5N2RlMTE3NzJmOGZmMGEwY2ViNzgzNTljYzBlMTc3ZTk2NWY2MDA0NzczMTk4YTFmMzY2OTg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.B4X1jcB3w85tN0D-c_yZFQedo-2xul2sX73TT_oXsvU)
 
 #### Classification Report
 
@@ -260,6 +260,48 @@ Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adal
 | **Macro Avg**     | 0.99       | 0.99   | 0.99     |
 | **Weighted Avg**  | 0.99       | 0.99   | 0.99     |
 
+### Evaluasi Model XGBoost
+
+Hasil model XGBoost pada data uji menunjukkan akurasi 87.975%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+
+#### Confusion Matrix
+
+![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210837-4207e71c-96eb-4352-b1cd-5406a181d012.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTU4MzYsIm5iZiI6MTc0ODA1NTUzNiwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwODM3LTQyMDdlNzFjLTk2ZWItNDM1Mi1iMWNkLTU0MDZhMTgxZDAxMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYTZiNWVlNTQ0N2VjODM0MWM5MDgxNDJmMTJhNzQ2ODBlYzQ0YWVkNWRiZGY2YzM2ZDcwYjFhMmU5NWQ3ZWNlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0KjVuivLkadTn1ealt8leh_11cBqRYn-vwv0PMj0CU4)
+
+#### Classification Report
+
+| Kelas             | Precision | Recall | F1-Score |
+| ----------------- | --------- | ------ | -------- |
+| Normal            | 0.99      | 0.83   | 0.90     |
+| Stunting          | 0.81      | 0.90   | 0.85     |
+| Severely Stunting | 0.83      | 0.79   | 0.81     |
+| Tinggi            | 0.92      | 1.00   | 0.95     |
+
+--
+| **Akurasi** | **0.87975** | | |
+| **Macro Avg** | 0.89 | 0.88 | 0.88 |
+| **Weighted Avg** | 0.88 | 0.88 | 0.88 |
+
+### Evaluasi Model Decision Tree
+
+Hasil model Decision Tree pada data uji menunjukkan akurasi 98.275%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+
+#### Confusion Matrix
+
+![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210838-c0f6ac0e-9dd4-4d53-a8f5-18b0d8ab67f0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTY3ODksIm5iZiI6MTc0ODA1NjQ4OSwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwODM4LWMwZjZhYzBlLTlkZDQtNGQ1My1hOGY1LTE4YjBkOGFiNjdmMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzE0NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MGU0MGU5YzVmZjlmNDA4NTJiOTY2NGYwNDg4ZjJmZDE0NmQyZTNhMjkxZGY5MzJkZTExMjA5MDFlYTVmYWU4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.dh_YDZcxEAXSQR5GmGrgCeB-ktQgtl6PKZW6ppfs2tk)
+
+#### Classification Report
+
+| Kelas             | Precision   | Recall | F1-Score |
+| ----------------- | ----------- | ------ | -------- |
+| Normal            | 0.98        | 0.97   | 0.98     |
+| Stunting          | 0.99        | 0.99   | 0.99     |
+| Severely Stunting | 0.97        | 0.99   | 0.98     |
+| Tinggi            | 0.98        | 1.00   | 0.99     |
+| **Akurasi**       | **0.98275** |        |          |
+| **Macro Avg**     | 0.98        | 0.98   | 0.98     |
+| **Weighted Avg**  | 0.98        | 0.98   | 0.98     |
+
 ### Perbandingan Akurasi Model
 
 Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih dan data uji:
@@ -270,16 +312,8 @@ Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih
 | XGBoost       | 0.888813           | 0.87975          |
 | Decision Tree | 1.0                | 0.98275          |
 
-Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%.
-
-### Hasil Evaluasi Model Terbaik (Random Forest)
-
-Berdasarkan notebook, model Random Forest memberikan akurasi tertinggi.
-
-- **Akurasi Random Forest pada Data Uji**: 0.9865 (atau 98.65%)
-
----
+Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%. Hal ini menunjukkan bahwa model ini memiliki kemampuan generalisasi yang baik terhadap data yang tidak terlihat sebelumnya. Meskipun Decision Tree juga menunjukkan akurasi yang tinggi pada data uji, Random Forest lebih stabil dan kurang rentan terhadap overfitting.
 
 ## Kesimpulan
 
-Proyek ini berhasil membangun model machine learning yang dapat mendeteksi gejala stunting balita dengan akurasi tinggi. Model terbaik, yaitu XGBoost, menunjukkan kinerja yang baik berdasarkan metrik evaluasi. Model ini berpotensi membantu identifikasi dini gejala stunting oleh tenaga medis maupun orang tua.
+Proyek ini berhasil mengembangkan model klasifikasi untuk memprediksi status gizi balita menggunakan data tinggi badan dan umur. Model Random Forest menunjukkan performa terbaik dengan akurasi 98.65% pada data uji, diikuti oleh Decision Tree (98.275%) dan XGBoost (87.975%). Proses pra-pemrosesan yang dilakukan, termasuk penanganan outlier, encoding fitur kategorikal, standarisasi fitur numerik, dan sampling untuk keseimbangan kelas, berkontribusi pada keberhasilan model. Model ini dapat digunakan sebagai alat bantu dalam pemantauan status gizi balita di Indonesia.
