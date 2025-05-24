@@ -1,107 +1,285 @@
-# Laporan Proyek Machine Learning - Fernando Michael Hebert Siregar
+# 📝 Laporan Proyek Machine Learning - Fernando Michael Hebert Siregar
 
-***
+---
+
 ## Domain Proyek
-Tema yang diangkat dari proyek ini adalah kesehatan terutama pada balita, dimana masih banyaknya balita di Indonesia yang mengalami gejala stunting oleh karena itu proyek ini dibuat sebagai langkah awal pengenalan gejala stunting bagi para orang tua dan petugas kesehatan.
-***
-### Latar Belakang
-Stunting adalah gangguan pertumbuhan dan perkembangan anak akibat kekurangan gizi dalam jangka panjang. Stunting bisa disebabkan oleh malnutrisi yang dialami ibu saat hamil, atau anak pada masa pertumbuhannya. Menteri Kesehatan Budi Gunadi Sadikin menyoroti lambatnya penurunan angka stunting di Indonesia. Berdasarkan data Kementerian Kesehatan, angka stunting di Indonesia pada tahun 2023 tercatat sebesar 21,5 persen, hanya turun 0,1 persen dari tahun sebelumnya yang sebesar 21,6 persen. Menkes Budi mengungkapkan bahwa salah satu penyebab rendahnya penurunan stunting adalah belum ditemukannya model implementasi yang efektif untuk program yang telah ditetapkan. Ia menilai ada masalah dalam eksekusi di lapangan sehingga program pencegahan stunting tidak berjalan dengan optimal.<br>
 
-Di era pesatnya kemajuan teknologi kecerdasan buatan (AI), masih banyak yang belum menyadari bahwa kecerdasan buatan memiliki beberapa cabang, dan salah satunya adalah machine learning atau pembelajaran mesin. Machine learning, sebagai bagian dari AI, menjadi daya tarik utama karena memiliki kemampuan belajar seperti manusia. Kemampuan ML untuk memperoleh data dan mempelajari informasi yang ada memungkinkannya untuk menjalankan berbagai tugas yang bervariasi, tergantung pada konteks pembelajaran yang telah dilakukan. <br>
+Tema proyek ini adalah **kesehatan anak**, khususnya **stunting** pada balita. Di Indonesia, kasus stunting masih tergolong tinggi dan menjadi salah satu tantangan dalam pembangunan kesehatan masyarakat. Proyek ini bertujuan untuk memanfaatkan teknologi machine learning guna mendeteksi gejala stunting secara dini.
 
-Dengan memanfaatkan machine learning dalam memprediksi gejala stunting pada balita diharapkan dapat membantu para orang tua maupun pekerja medis agar lebih mudah dalam mengidentifikasi masalah tersebut.
-<br>
-<br>
-Sumber : 
+Stunting adalah kondisi gangguan pertumbuhan akibat kekurangan gizi kronis. Berdasarkan data Kementerian Kesehatan (2023), prevalensi stunting sebesar 21,5%, menurun tipis dari tahun sebelumnya (21,6%). Salah satu tantangan dalam penanggulangan stunting adalah belum optimalnya pelaksanaan program di lapangan. Oleh karena itu, diperlukan pendekatan teknologi seperti machine learning untuk mendukung proses identifikasi secara cepat dan akurat.
+
+📚 Referensi:
+
 - [Alodokter](https://www.alodokter.com/stunting)
-- [Dinas Kesehatan](https://dinkes.papua.go.id/menkes-budi-soroti-lambatnya-penurunan-angka-stunting-di-indonesia/#:~:text=Berdasarkan%20data%20Kementerian%20Kesehatan%2C%20angka,yang%20sebesar%2021%2C6%20persen.)
+- [Dinas Kesehatan](https://dinkes.papua.go.id/menkes-budi-soroti-lambatnya-penurunan-angka-stunting-di-indonesia)
 - [Cloud Computing Indonesia](https://www.cloudcomputing.id/pengetahuan-dasar/apa-itu-machine-learning)
-***
+
+---
+
 ## Business Understanding
-***
-Tujuan dari pengembangan model prediksi ini adalah untuk membantu orang tua dan petugas kesehatan dalam mendeteksi gejala stunting pada balita secara cepat dan akurat. Dengan mengenali tanda-tanda awal, tindakan preventif dan intervensi medis dapat segera diambil guna meningkatkan kualitas kesehatan anak-anak. Dibutuhkan sebuah solusi yang dapat mengidentifikasi balita yang berpotensi mengalami stunting berdasarkan data seperti pertumbuhan fisik (berat badan, tinggi badan), usia, dan faktor-faktor lainnya.
+
 ### Problem Statements
+
 1. Bagaimana mendeteksi gejala stunting pada balita menggunakan model machine learning dari fitur-fitur yang ada?
-2. Dari model yang dilatih model mana yang memiliki akurasi paling baik ?
-3. Bagaimana cara mengetahui bahwa model yang dibuat dapat benar-benar dikatakan baik dalam memprediksi gejala stunting pada anak sehingga dapat diterapkan ? 
-***
+2. Model machine learning mana yang memberikan akurasi prediksi terbaik?
+3. Bagaimana memastikan model yang digunakan layak diterapkan di dunia nyata?
+
 ### Goals
-1. Membangun model machine learning yang mampu mengenali gejala stunting berdasarkan faktor-faktor seperti tinggi badan, Jenis Kelamin, serta Usia (Umur), dan juga Status Gizi sebagai variabel target untuk diprediksi.
-2. Membuat sebuah evaluasi dengan beberapa parameter sehingga hasil yang diperoleh dari model dapat dipercaya untuk diterapkan.
-***
+
+1. Membangun model machine learning untuk mengenali gejala stunting berdasarkan fitur-fitur seperti umur, tinggi badan, dan jenis kelamin.
+2. Mengevaluasi performa model menggunakan metrik evaluasi klasifikasi agar hasil prediksi dapat diandalkan.
+3. Memilih model terbaik berdasarkan evaluasi dan validasi.
+
 ### Solution Statements
-1. Membandingkan Beberapa Algoritma Machine Learning <br>
-Untuk mendeteksi gejala stunting pada balita, akan digunakan beberapa algoritma machine learning, yaitu:
-* Random Forest, yang mampu menangani dataset dengan banyak fitur dan menghasilkan prediksi yang robust.
-* XGBoost, yang dikenal sebagai salah satu algoritma boosting yang sangat efisien dalam menangani data dengan ketidakseimbangan kelas.
-* Decision Tree, sebagai algoritma dasar yang mudah diinterpretasikan dan digunakan sebagai benchmark.
-2. Evaluasi Model dengan Metrik yang Relevan <br>
-Setiap model akan diukur menggunakan metrik evaluasi yang dapat menggambarkan performa model dalam menangani kasus deteksi gejala stunting:
-* Accuracy: Mengukur persentase prediksi benar dari seluruh prediksi.
-* Precision: Mengukur akurasi dari prediksi positif yang diberikan oleh model.
-* Recall: Mengukur seberapa baik model dapat mendeteksi kasus stunting (true positive rate).
-***
+
+- Menggunakan 3 algoritma machine learning: Decision Tree, Random Forest, dan XGBoost.
+- Melakukan evaluasi model menggunakan metrik: Accuracy, Precision, Recall, dan F1-Score.
+- Memilih model dengan performa terbaik dan analisis hasil klasifikasinya (Confusion Matrix, Classification Report).
+
+---
+
 ## Data Understanding
-Dataset yang digunakan disini berasal dari website Kaggle dengan nama dataset [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows). Dataset ini merupakan kumpulan data berdasarkan rumus z-score penentuan stunting menurut WHO (World Health Organization), yang berfokus pada deteksi stunting pada balita (bayi dibawah lima tahun). Dataset ini terdiri dari 121.000 baris data, yang merinci informasi mengenai umur, jenis kelamin, tinggi badan, dan status gizi balita. Dataset ini bertujuan untuk membantu peneliti, ahli gizi, dan pembuat kebijakan dalam memahami dan mengatasi masalah stunting pada anak-anak di bawah lima tahun.dengan penjabaran sebagai berikut : 
-| Bagian | Keterangan | 
-| ------ | ------ |
-| Judul | [Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows)  |
-| Lisensi | [MIT](plugins/github/README.md) |
-| Jenis Data | CSV |
-| Ukuran | 3.14 MB |
-| Jumlah baris dan kolom | 120999 Baris x 4 Kolom |
-<br>
-Dataset yang didapatkan ini berisi data mengenai balita dengan beberap fitur-fitur yang dijabarkan diantaranya : 
 
-| No | Kolom | Jumlah | Tipe Data |
-| ------ | ------ | ------ | ------ |
-| 1 | Umur (bulan) | 120999 | int64 |
-| 2 | Jenis Kelamin | 120999 | object |
-| 3 | Tinggi Badan (cm) | 120999 | float64 |
-| 4 | Status Gizi | 120999 | object | 
+Dataset yang digunakan berasal dari [Kaggle - Stunting Toddler (Balita) Detection](https://www.kaggle.com/datasets/rendiputra/stunting-balita-detection-121k-rows). Dataset terdiri dari 120.999 baris dan 4 kolom, dengan fitur:
 
-* Umur : Merupakan umur anak dalam hitungan bulan
-* Jenis Kelamin : Jenis Kelamin anak
-* Tinggi badan (cm) : Tinggi badan anak dalam centimeter
-* Status Gizi : Status gizi yang dikategorikan menjadi 4 status - 'severely stunting', 'stunting', 'normal', dan 'tinggi'. 'Severely stunting' menunjukkan kondisi sangat serius (<-3 SD), 'stunting' menunjukkan kondisi stunting (-3 SD sd <-2 SD), 'normal' mengindikasikan status gizi yang sehat (-2 SD sd +3 SD), dan 'tinggi' (height) menunjukkan pertumbuhan di atas rata-rata (>+3 SD).
+| Fitur             | Deskripsi                                                               | Tipe Data |
+| ----------------- | ----------------------------------------------------------------------- | --------- |
+| Umur (bulan)      | Usia balita dalam bulan                                                 | int64     |
+| Jenis Kelamin     | Laki-laki / Perempuan                                                   | object    |
+| Tinggi Badan (cm) | Tinggi balita                                                           | float64   |
+| Status Gizi       | Target klasifikasi: `severely stunting`, `stunting`, `normal`, `tinggi` | object    |
 
-### Mengecek nilai null
-Untuk lebih mengenal data disini hal pertama yang di lakukan adalah mengecek Nilai Null atau kosong namun pada data ini tidak terdapat data kosong atau null
+### Pengecekan Data
 
-### Mengecek Outlier
-Selanjutnya adalah mengecek adanya outlier dalam data. Outlier sendiri didapat dengan menghitung batas bawah dan batas atas dari data yang dimiliki. Yang pertama adalah mencari QI, Q3, dan IQR dari masing-masing kolom pada data. Untuk mencari IQR sendiri merupakan rentang antara Q1 sampai dengan Q3 dengan rumus :
+#### Pengecekan nilai null :
 
+Berdasarkan hasil pengecekan menggunakan `df.isna().sum()`, diketahui bahwa tidak terdapat nilai null pada setiap kolom dalam dataset.
 
-$$IQR = Q_3 - Q_1$$
+#### Pengecekan Outlier
 
-* Q1 : merupakan nilai quantile pertama atau nilai yang terletak pada posisi ke 25% dalam data
-* Q3 : merupakan nilai quantile ketiga atau nilai yang terletak pada posisi ke 75% dalam data
-<br>
+- Fitur Umur (bulan): Tidak ditemukan outlier.
+- Fitur Tinggi Badan (cm): Ditemukan 38 outlier. Outlier ini kemudian dihapus pada tahap Data Preparation.
 
-Batas bawah dan batas atas sendiri didapatkan dengan : <br>
-Batas bawah : Q1 - (1.5 x IQR)<br>
-Batas atas : Q3 + (1.5 x IQR) <br>
+![Outlier](https://private-user-images.githubusercontent.com/113835044/375197968-a9d49123-3f26-4e51-8988-6ebf3ef2de0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc4MzI5NjgsIm5iZiI6MTc0NzgzMjY2OCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk3OTY4LWE5ZDQ5MTIzLTNmMjYtNGU1MS04OTg4LTZlYmYzZWYyZGUwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMVQxMzA0MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wOTUyNzhmN2FkMDI4OGUzZGY0NGExNWFmNTIyY2MwYjUzMzIwNzc1ZTRiMzM3NWM1Mjc0MzlhOGZjYmQwY2M4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Z_7xcHKW7FjHaY-BG1havcl_YcR8kzo78gqYZe0e9Dw)
+Outlier diidentifikasi dengan metode IQR, menggunakan rumus:
 
+```
+IQR = Q3 - Q1
+Batas bawah = Q1 - 1.5 * IQR
+Batas atas = Q3 + 1.5 * IQR
+```
 
+Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Badan` dibersihkan dari nilai ekstrim ini.
 
-Namun disini untuk mempermudah melakukan pengecekan outlier terhadap masing-masing kolom maka dibuatlah sebuah visualisasi box plot seperti pada gambar dibawah ini.<br>
-<br>
-![box-plot](https://private-user-images.githubusercontent.com/113835044/375197968-a9d49123-3f26-4e51-8988-6ebf3ef2de0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg1Mjk3NjQsIm5iZiI6MTcyODUyOTQ2NCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk3OTY4LWE5ZDQ5MTIzLTNmMjYtNGU1MS04OTg4LTZlYmYzZWYyZGUwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxMFQwMzA0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNTRkNzM1NGE4ZDZkOTc4MTI3OTJjYWQwNzFjMTljN2NhNzVhMjAwZjUwMjY2YzEyMTU0MzU0MzRhODMwYzFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.wthiX2v2pCil4VODDfnqJSEyn-DpTIpgYUUAuUl3swA)
+#### Univariate Analysis
 
-<br>
-dari hasil boxplot diatas terlihat bahwa adanya outlier pada kolom tinggi badan, sehingga harus dihapus.
+- Jenis Kelamin: Distribusi cukup seimbang, dengan 'perempuan' sebanyak 60964 (50.4%) dan 'laki-laki' sebanyak 59997 (49.6%).
+  ![Jenis Kelamin](https://private-user-images.githubusercontent.com/113835044/375198591-c72ce087-4bcc-4734-a1ef-b9b0217b0bed.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTI1MzYsIm5iZiI6MTc0ODA1MjIzNiwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTkxLWM3MmNlMDg3LTRiY2MtNDczNC1hMWVmLWI5YjAyMTdiMGJlZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjAzNTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMWUzM2Q5MzVjNWIzNjRiZTA0ZDU5YmE1YTI3ZWI5MmNkOWNmMjhjNGFhNTBiNmQ1Mzg4MjcyODFiYTEzNzNlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.4JLNdZtR2HypZXF6V7MbmT6dMEg37uVJoP1uKQIXaEY)
+- Status Gizi (Target): Distribusi kelas tidak seimbang. Sebelum sampling, kelas `normal` mendominasi (56.0%), diikuti oleh `severely stunted` (16.4%), `tinggi` (16.2%), dan `stunted` (11.4%). Ketidakseimbangan ini diatasi pada tahap Data Preparation dengan melakukan sampling.<br>
+  ![Status Gizi](https://private-user-images.githubusercontent.com/113835044/375198570-cad555b0-72d5-4305-8a51-bcbc538bfb73.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTI1MzYsIm5iZiI6MTc0ODA1MjIzNiwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTcwLWNhZDU1NWIwLTcyZDUtNDMwNS04YTUxLWJjYmM1MzhiZmI3My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjAzNTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04YmRlZDgyMTk1NzBhZGEzNTM1YjIyNzQ2ZWY3MWRkN2M1YmZkMDNhZGNmYmU0MDk5Mzk2ZWE3YTlmMmQzYTRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.U-n5VKRD2zdE4vZ06B3-c73iV82WHm6MQtmX01kXRxA)
+- Umur (bulan): Distribusi umur balita tampak relatif seragam dengan beberapa penurunan pada interval tertentu.
+- Tinggi Badan (cm): Distribusi tinggi badan mendekati bentuk normal, dengan puncak di sekitar 80-100 cm.
+  ![Tinggi Badan](https://private-user-images.githubusercontent.com/113835044/375198550-440c3005-4948-4838-abf5-a01ed8e32601.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTI5NTgsIm5iZiI6MTc0ODA1MjY1OCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTUwLTQ0MGMzMDA1LTQ5NDgtNDgzOC1hYmY1LWEwMWVkOGUzMjYwMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjEwNThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNjAzMDMzMzkxOTdkZjE2NGQzMjAwNzMwYTcwMGYzNmY1MTdkNjc1MWNkNmNhODc1YmJmOThmYzc4MjE3NDFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0Tcl37fZcgnnrgZdX2CoFtWBszmhOO5th8jdiZEDfbM)
 
-### Univariate Analysis
-![eda-1](https://private-user-images.githubusercontent.com/113835044/375198591-c72ce087-4bcc-4734-a1ef-b9b0217b0bed.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg2MTY4MDMsIm5iZiI6MTcyODYxNjUwMywicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTkxLWM3MmNlMDg3LTRiY2MtNDczNC1hMWVmLWI5YjAyMTdiMGJlZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxMVQwMzE1MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZWVjNTk4MGM3MGU4ZWNmYWE0YjI2ZDQ1NjgzZmQ3NWFkZjVjNDY1MjgwNWQ4ZmZjZmQzZjYyYThjMjExZTQzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.p5Mj-h2q9IoeYg-BUfs3nX6WssSvDORc34n1hfazRns)
-<br>
-Dari hasil visualisasi grafik diatas dapat diketahui bahwa dsitribusi data pada jenis kelamin perempuan dan laki-laki normal seimbang, dengan kurang lebih masing-masing pada perempuan berjumlah . 
-***
-![eda-2](https://private-user-images.githubusercontent.com/113835044/375198570-cad555b0-72d5-4305-8a51-bcbc538bfb73.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg4MjQxOTQsIm5iZiI6MTcyODgyMzg5NCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTcwLWNhZDU1NWIwLTcyZDUtNDMwNS04YTUxLWJjYmM1MzhiZmI3My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxM1QxMjUxMzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzExZTVmZmZmNDllZWIyOTNjYTE1MzhjMTQwNDlhZjNiZmU1M2Y1MzUxY2Q4ZGZlN2I0MGQwYjNiMGUyMDM3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.yH657Zj_H0P11XFiL9dpCzh2VnnC56M0iAHCrvus0UE)
-<br>
-Dari visualisasi diatas menunjukkan bahwa mayoritas balita berada pada kategori gizi normal, tetapi terdapat sebagian balita yang mengalami masalah stunting (baik ringan maupun berat), serta hanya sedikit yang memiliki status gizi sangat baik. Analisis ini penting untuk memahami prevalensi masalah stunting pada populasi balita.
-***
-![eda-3](https://private-user-images.githubusercontent.com/113835044/375198550-440c3005-4948-4838-abf5-a01ed8e32601.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg4MjQxOTQsIm5iZiI6MTcyODgyMzg5NCwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTUwLTQ0MGMzMDA1LTQ5NDgtNDgzOC1hYmY1LWEwMWVkOGUzMjYwMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAxM1QxMjUxMzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NDYwOGRiZDY5YTc4ZWM4OTNiZjkxZjE3OGVjYzBkOGZjNzE4MjNkMGNmYjE5OGUxN2VhODYzYTkzYWY1ZTE4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.aOSXjcSf5kcfOrhVABFFNyRAo1JJxj7-1B-qjpMvuWs)
-<br>
-Data umur tampaknya memiliki distribusi yang seragam di setiap interval, kecuali pada beberapa bagian tertentu yang lebih rendah. Selanjutnya Terdapat gap yang besar pada bagian tertentu data umur, mungkin terjadi karena kesalahan pencatatan atau kelompok umur tertentu tidak terwakili. Selain itu pada data tinggi badan menunjukkan bentuk yang mendekati normal atau distribusi dengan puncak yang berada di sekitar tinggi badan tertentu. Dapat dilihat bahwa sebagian besar individu dalam dataset memiliki tinggi badan sekitar 80-100 cm, dan jumlahnya menurun pada tinggi badan yang lebih rendah atau lebih tinggi dari itu.
+#### Multivariate Analysis
 
-### Multivariate Analysis
+- Dari countplot antara `Status Gizi` dan `Jenis Kelamin`, terlihat bahwa proporsi status gizi pada laki-laki dan perempuan relatif seimbang. Namun, terdapat perbedaan kecil pada kelas `stunted`. `tinggi` dan `normal`, di mana lebih banyak perempuan dibandingkan laki-laki. Namun seperti pada analisis univariate, kelas `normal` mendominasi.
+  ![Status Gizi vs Jenis Kelamin](https://private-user-images.githubusercontent.com/113835044/375198581-03374092-3c4b-4346-9c7d-db5922a52bb4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTQzNTMsIm5iZiI6MTc0ODA1NDA1MywicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTgxLTAzMzc0MDkyLTNjNGItNDM0Ni05YzdkLWRiNTkyMmE1MmJiNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjM0MTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZDcxMjJiOWZhMWVmM2E2YTg2MzM5OTU1ZGMwYmYwYjE1NWY5Y2NmOWVmNGYwYzhjOWQwZDVlYTNlYzNkMDk1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hJsOEoQGbDwQc2enbRE97XMLgGGawkXai8U2V_hl8y8)
+- Pairplot menunjukkan adanya korelasi positif antara fitur Umur (bulan) dan Tinggi Badan (cm), yang mengindikasikan bahwa seiring bertambahnya usia balita, tinggi badannya cenderung meningkat.
+  ![pairplot](https://private-user-images.githubusercontent.com/113835044/375198561-354f6b1e-aee6-47c1-b63e-856d1c26cba9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTQ2MDYsIm5iZiI6MTc0ODA1NDMwNiwicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTYxLTM1NGY2YjFlLWFlZTYtNDdjMS1iNjNlLTg1NmQxYzI2Y2JhOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjM4MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMTYzMWUzMDIyNTYwODgyNDYyYTEzYjZlZTBhNzU4Y2U2MDM0NjIxODM4OTlmMjA1OWViNzAxNmVkOGEwODg4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.5q13On-EY2dV6RpfY26kv_X-Xbz-eToR1kT7GqiD4Fo)
+
+---
+
+## Data Preparation
+
+1. **Encoding Data Kategorikal**:
+
+   - Fitur kategorikal `Jenis Kelamin` dan `Status Gizi` diubah menjadi representasi numerik.
+   - Metode yang digunakan adalah **Label Encoding** dari `sklearn.preprocessing`.
+   - Alasan: Algoritma machine learning umumnya memerlukan input berupa data numerik.
+
+   ```python
+   # Contoh kode Label Encoding dari notebook
+   from sklearn.preprocessing import LabelEncoder
+   encoder = LabelEncoder()
+   for col in category_col:
+       df[col] = encoder.fit_transform(df[col])
+   ```
+
+2. **Standarisasi Fitur Numerik**:
+
+   - Fitur numerik (`Umur (bulan)`, `Tinggi Badan (cm)`) distandarisasi.
+   - Metode yang digunakan adalah **StandardScaler** dari `sklearn.preprocessing`. StandardScaler mengubah data sehingga memiliki rata-rata 0 dan standar deviasi 1.
+   - Alasan: Beberapa algoritma machine learning, seperti XGBoost, sensitif terhadap skala fitur. Standarisasi membantu memastikan bahwa semua fitur memberikan kontribusi yang seimbang selama proses pelatihan model.
+
+   ```python
+   from sklearn.preprocessing
+   df[numerical_col] = scaler.fit_transform(df[numerical_col])
+   ```
+
+3. **Sampling Data untuk Keseimbangan Kelas**:
+
+   - Setelah pra-pemrosesan awal, dilakukan sampling untuk menyeimbangkan distribusi kelas pada variabel target `Status Gizi`.
+   - Dari setiap kategori `Status Gizi` ('normal', 'severely stunted', 'stunted', 'tinggi'), diambil sampel sebanyak 5.000 data.
+   - Dataset akhir setelah sampling memiliki 20.000 baris.
+   - Alasan: Mengatasi ketidakseimbangan kelas untuk mencegah model menjadi bias terhadap kelas mayoritas dan meningkatkan kemampuannya dalam memprediksi kelas minoritas.
+
+4. **Pembagian Data (Split Data)**:
+
+   - Dataset yang telah dipersiapkan dibagi menjadi data latih (train) dan data uji (test).
+   - Proporsi pembagian adalah 80% untuk data latih (16.000 sampel) dan 20% untuk data uji (4.000 sampel).
+   - Parameter `random_state=42` digunakan untuk memastikan reproduktifitas hasil pembagian.
+   - Alasan: Untuk melatih model pada satu set data dan mengujinya pada set data yang belum pernah dilihat sebelumnya, sehingga memberikan evaluasi performa model yang lebih objektif.
+
+   ```python
+   from sklearn.model_selection import train_test_split
+   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+   ```
+
+---
+
+## Modeling
+
+Tiga model klasifikasi machine learning digunakan dan dievaluasi dalam proyek ini. Parameter default dari library `scikit-learn` dan `xgboost` digunakan untuk pelatihan awal setiap model.
+
+### 1. Decision Tree
+
+- **Deskripsi**: Decision Tree adalah model non-parametrik yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang diambil dari fitur data.
+- **Tahapan & Parameter**: Model `DecisionTreeClassifier()` dari `sklearn.tree` dilatih menggunakan data latih (`X_train`, `y_train`) dengan parameter default.
+- **Kelebihan**:
+  - Mudah diinterpretasikan dan divisualisasikan.
+  - Cepat untuk dilatih.
+  - Dapat menangani data numerik dan kategorikal.
+- **Kekurangan**:
+  - Rentan terhadap overfitting, terutama dengan pohon yang dalam.
+  - Tidak stabil, perubahan kecil pada data dapat menghasilkan pohon yang berbeda secara signifikan.
+
+### 2. Random Forest
+
+- **Deskripsi**: Random Forest adalah metode ensemble learning yang membangun banyak decision tree selama pelatihan dan mengeluarkan kelas yang merupakan modus dari kelas (klasifikasi) atau prediksi rata-rata (regresi) dari masing-masing pohon.
+- **Tahapan & Parameter**: Model `RandomForestClassifier()` dari `sklearn.ensemble` dilatih menggunakan data latih (`X_train`, `y_train`) dengan parameter default.
+- **Kelebihan**:
+  - Lebih stabil dan akurat dibandingkan Decision Tree tunggal karena mengurangi varians.
+  - Efektif dalam menangani dataset besar dan berdimensi tinggi.
+  - Kurang rentan terhadap overfitting dibandingkan Decision Tree.
+- **Kekurangan**:
+  - Lebih sulit diinterpretasikan (black box) dibandingkan Decision Tree tunggal.
+  - Membutuhkan lebih banyak waktu dan sumber daya komputasi untuk pelatihan.
+
+### 3. XGBoost (Extreme Gradient Boosting)
+
+- **Deskripsi**: XGBoost adalah implementasi gradient boosting yang dioptimalkan, dikenal karena kecepatan dan performanya yang tinggi. Model yang digunakan dalam notebook adalah `XGBRFClassifier`, yang merupakan implementasi Random Forest menggunakan XGBoost sebagai backend.
+- **Tahapan & Parameter**: Model `XGBRFClassifier()` dari `xgboost` dilatih menggunakan data latih (`X_train`, `y_train`) dengan parameter default.
+- **Kelebihan**:
+  - Umumnya memberikan akurasi yang sangat tinggi (meskipun dalam kasus ini `XGBRFClassifier` tidak menjadi yang teratas).
+  - Menangani data hilang secara internal.
+  - Memiliki regularisasi untuk mencegah overfitting.
+  - Dapat menjalankan pelatihan secara paralel.
+- **Kekurangan**:
+  - Lebih kompleks dan tuning parameter bisa lebih rumit dibandingkan model yang lebih sederhana.
+  - Membutuhkan pemahaman yang baik tentang cara kerjanya untuk optimasi maksimal.
+
+### Pemilihan Model Terbaik
+
+Berdasarkan hasil evaluasi pada data uji (detail di bagian Evaluation):
+
+- **Random Forest**: Akurasi 0.9865
+- **XGBoost (`XGBRFClassifier`)**: Akurasi 0.87975
+- **Decision Tree**: Akurasi 0.98275
+
+Dari tabel perbandingan akurasi pada data latih dan data uji:
+
+| Model         | Akurasi Data Latih | Akurasi Data Uji |
+| :------------ | :----------------- | :--------------- |
+| Random Forest | 1.0                | 0.9865           |
+| XGBoost       | 0.888813           | 0.87975          |
+| Decision Tree | 1.0                | 0.98275          |
+
+Model **Random Forest** menunjukkan akurasi tertinggi pada data uji (98.65%), diikuti oleh Decision Tree (98.275%). Meskipun akurasi latih untuk Random Forest dan Decision Tree adalah 1.0 (yang bisa mengindikasikan overfitting), Random Forest memiliki performa generalisasi yang sedikit lebih baik pada data uji. Model XGBRFClassifier dalam implementasi ini menunjukkan akurasi yang lebih rendah dibandingkan dua model lainnya.
+
+---
+
+## Evaluation
+
+### Metrik Evaluasi yang Digunakan:
+
+- **Accuracy**: Rasio prediksi yang benar.
+- **Precision**: Kemampuan model memprediksi kelas positif secara tepat.
+- **Recall**: Kemampuan model mendeteksi semua kasus aktual dari suatu kelas.
+- **F1-Score**: Rata-rata harmonik dari precision dan recall.
+
+### Formula Evaluasi:
+
+- Accuracy:
+
+  $$
+  Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
+  $$
+
+- Precision:
+
+  $$
+  Precision = \frac{TP}{TP + FP}
+  $$
+
+- Recall:
+
+  $$
+  Recall = \frac{TP}{TP + FN}
+  $$
+
+- F1 Score:
+  $$
+  F1 = 2 * \frac{Precision * Recall}{Precision + Recall}
+  $$
+
+Dimana:
+
+- TP (True Positive): Jumlah kasus positif yang diprediksi dengan benar.
+- TN (True Negative): Jumlah kasus negatif yang diprediksi dengan benar.
+- FP (False Positive): Jumlah kasus negatif yang salah diprediksi sebagai positif.
+- FN (False Negative): Jumlah kasus positif yang salah diprediksi sebagai negatif.
+
+### Evaluasi Model Random Forest
+
+Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+
+#### Confusion Matrix
+
+![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/375198598-0f3a2b8c-4d1e-4a5f-8b7c-6d9e0f1a2b5c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTQzNTMsIm5iZiI6MTc0ODA1NDA1MywicGF0aCI6Ii8xMTM4MzUwNDQvMzc1MTk4NTg2LTAzYjA2ZGIwLTQyYjItNDYxNy05YjA5LWI5ZGUwZjEwMmQyNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjM4MjZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZmU2YjA2OTg2NzA4NmE5NjYxNDUzODg2YjA5NmU4NjkzZjEwZjYxZjU2ZjE4OTg3NzU5ZTIzNmU4NWJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.7qKqHhVnqv7r7s8nqkK7rOeV)
+
+#### Classification Report
+
+| Kelas             | Precision  | Recall | F1-Score |
+| ----------------- | ---------- | ------ | -------- |
+| Normal            | 1.00       | 0.97   | 0.98     |
+| Stunting          | 1.00       | 0.99   | 0.99     |
+| Severely Stunting | 0.97       | 0.99   | 0.98     |
+| Tinggi            | 0.98       | 1.00   | 0.99     |
+| **Akurasi**       | **0.9865** |        |          |
+| **Macro Avg**     | 0.99       | 0.99   | 0.99     |
+| **Weighted Avg**  | 0.99       | 0.99   | 0.99     |
+
+### Perbandingan Akurasi Model
+
+Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih dan data uji:
+
+| Model         | Akurasi Data Latih | Akurasi Data Uji |
+| :------------ | :----------------- | :--------------- |
+| Random Forest | 1.0                | 0.9865           |
+| XGBoost       | 0.888813           | 0.87975          |
+| Decision Tree | 1.0                | 0.98275          |
+
+Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%.
+
+### Hasil Evaluasi Model Terbaik (Random Forest)
+
+Berdasarkan notebook, model Random Forest memberikan akurasi tertinggi.
+
+- **Akurasi Random Forest pada Data Uji**: 0.9865 (atau 98.65%)
+
+---
+
+## Kesimpulan
+
+Proyek ini berhasil membangun model machine learning yang dapat mendeteksi gejala stunting balita dengan akurasi tinggi. Model terbaik, yaitu XGBoost, menunjukkan kinerja yang baik berdasarkan metrik evaluasi. Model ini berpotensi membantu identifikasi dini gejala stunting oleh tenaga medis maupun orang tua.
