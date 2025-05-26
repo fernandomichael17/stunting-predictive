@@ -237,7 +237,7 @@ Dimana:
 
 ### Evaluasi Model Random Forest
 
-Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+Hasil model Random Forest pada data uji menunjukkan akurasi 98.95%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
 
 #### Confusion Matrix
 
@@ -257,7 +257,7 @@ Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adal
 
 ### Evaluasi Model XGBoost
 
-Hasil model XGBoost pada data uji menunjukkan akurasi 87.975%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+Hasil model XGBoost pada data uji menunjukkan akurasi 87.625%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
 
 #### Confusion Matrix
 
@@ -277,7 +277,7 @@ Hasil model XGBoost pada data uji menunjukkan akurasi 87.975%. Berikut adalah ha
 
 ### Evaluasi Model Decision Tree
 
-Hasil model Decision Tree pada data uji menunjukkan akurasi 98.275%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
+Hasil model Decision Tree pada data uji menunjukkan akurasi 98.25%. Berikut adalah hasil evaluasi model melalui Confusion Matrix dan Classification Report.
 
 #### Confusion Matrix
 
