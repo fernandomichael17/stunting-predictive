@@ -307,7 +307,7 @@ Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih
 
 ![evaluasi](https://github.com/user-attachments/assets/3b646498-3da5-41aa-959c-d7c47d61c64e)
 
-Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%. Hal ini menunjukkan bahwa model ini memiliki kemampuan generalisasi yang baik terhadap data yang tidak terlihat sebelumnya. Meskipun Decision Tree juga menunjukkan akurasi yang tinggi pada data uji, Random Forest lebih stabil dan kurang rentan terhadap overfitting.
+Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.95%. Hal ini menunjukkan bahwa model ini memiliki kemampuan generalisasi yang baik terhadap data yang tidak terlihat sebelumnya. Meskipun Decision Tree juga menunjukkan akurasi yang tinggi pada data uji, Random Forest lebih stabil dan kurang rentan terhadap overfitting.
 
 ## Kesimpulan
 
