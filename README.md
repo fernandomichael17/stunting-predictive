@@ -92,7 +92,12 @@ Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Ba
 
 ## Data Preparation
 
-1. **Encoding Data Kategorikal**:
+1. Handling Data Outlier:
+
+   - Fitur `Tinggi Badan (cm)` dibersihkan dari outlier menggunakan metode IQR (Interquartile Range).
+   - Outlier dihapus untuk memastikan model tidak terpengaruh oleh nilai ekstrim yang dapat mengganggu proses pelatihan.
+
+2. **Encoding Data Kategorikal**:
 
    - Fitur kategorikal `Jenis Kelamin` dan `Status Gizi` diubah menjadi representasi numerik.
    - Metode yang digunakan adalah **Label Encoding** dari `sklearn.preprocessing`.
@@ -106,7 +111,7 @@ Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Ba
        df[col] = encoder.fit_transform(df[col])
    ```
 
-2. **Standarisasi Fitur Numerik**:
+3. **Standarisasi Fitur Numerik**:
 
    - Fitur numerik (`Umur (bulan)`, `Tinggi Badan (cm)`) distandarisasi.
    - Metode yang digunakan adalah **StandardScaler** dari `sklearn.preprocessing`. StandardScaler mengubah data sehingga memiliki rata-rata 0 dan standar deviasi 1.
@@ -117,14 +122,14 @@ Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Ba
    df[numerical_col] = scaler.fit_transform(df[numerical_col])
    ```
 
-3. **Sampling Data untuk Keseimbangan Kelas**:
+4. **Sampling Data untuk Keseimbangan Kelas**:
 
    - Setelah pra-pemrosesan awal, dilakukan sampling untuk menyeimbangkan distribusi kelas pada variabel target `Status Gizi`.
    - Dari setiap kategori `Status Gizi` ('normal', 'severely stunted', 'stunted', 'tinggi'), diambil sampel sebanyak 5.000 data.
    - Dataset akhir setelah sampling memiliki 20.000 baris.
    - Alasan: Mengatasi ketidakseimbangan kelas untuk mencegah model menjadi bias terhadap kelas mayoritas dan meningkatkan kemampuannya dalam memprediksi kelas minoritas.
 
-4. **Pembagian Data (Split Data)**:
+5. **Pembagian Data (Split Data)**:
 
    - Dataset yang telah dipersiapkan dibagi menjadi data latih (train) dan data uji (test).
    - Proporsi pembagian adalah 80% untuk data latih (16.000 sampel) dan 20% untuk data uji (4.000 sampel).
@@ -178,24 +183,6 @@ Tiga model klasifikasi machine learning digunakan dan dievaluasi dalam proyek in
 - **Kekurangan**:
   - Lebih kompleks dan tuning parameter bisa lebih rumit dibandingkan model yang lebih sederhana.
   - Membutuhkan pemahaman yang baik tentang cara kerjanya untuk optimasi maksimal.
-
-### Pemilihan Model Terbaik
-
-Berdasarkan hasil evaluasi pada data uji (detail di bagian Evaluation):
-
-- **Random Forest**: Akurasi 0.9865
-- **XGBoost (`XGBRFClassifier`)**: Akurasi 0.87975
-- **Decision Tree**: Akurasi 0.98275
-
-Dari tabel perbandingan akurasi pada data latih dan data uji:
-
-| Model         | Akurasi Data Latih | Akurasi Data Uji |
-| :------------ | :----------------- | :--------------- |
-| Random Forest | 1.0                | 0.9865           |
-| XGBoost       | 0.888813           | 0.87975          |
-| Decision Tree | 1.0                | 0.98275          |
-
-Model **Random Forest** menunjukkan akurasi tertinggi pada data uji (98.65%), diikuti oleh Decision Tree (98.275%). Meskipun akurasi latih untuk Random Forest dan Decision Tree adalah 1.0 (yang bisa mengindikasikan overfitting), Random Forest memiliki performa generalisasi yang sedikit lebih baik pada data uji. Model XGBRFClassifier dalam implementasi ini menunjukkan akurasi yang lebih rendah dibandingkan dua model lainnya.
 
 ---
 
@@ -252,11 +239,11 @@ Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adal
 
 | Kelas             | Precision  | Recall | F1-Score |
 | ----------------- | ---------- | ------ | -------- |
-| Normal            | 1.00       | 0.97   | 0.98     |
-| Stunting          | 1.00       | 0.99   | 0.99     |
-| Severely Stunting | 0.97       | 0.99   | 0.98     |
+| Normal            | 0.99       | 0.97   | 0.98     |
+| Stunting          | 1.00       | 0.99   | 1.00     |
+| Severely Stunting | 0.99       | 1.00   | 0.99     |
 | Tinggi            | 0.98       | 1.00   | 0.99     |
-| **Akurasi**       | **0.9865** |        |          |
+| **Akurasi**       | **0.9895** |        |          |
 | **Macro Avg**     | 0.99       | 0.99   | 0.99     |
 | **Weighted Avg**  | 0.99       | 0.99   | 0.99     |
 
@@ -272,11 +259,11 @@ Hasil model XGBoost pada data uji menunjukkan akurasi 87.975%. Berikut adalah ha
 
 | Kelas             | Precision   | Recall | F1-Score |
 | ----------------- | ----------- | ------ | -------- |
-| Normal            | 0.99        | 0.83   | 0.90     |
-| Stunting          | 0.81        | 0.90   | 0.85     |
-| Severely Stunting | 0.83        | 0.79   | 0.81     |
-| Tinggi            | 0.92        | 1.00   | 0.95     |
-| **Akurasi**       | **0.87975** |        |          |
+| Normal            | 0.98        | 0.80   | 0.88     |
+| Stunting          | 0.79        | 0.94   | 0.86     |
+| Severely Stunting | 0.87        | 0.78   | 0.82     |
+| Tinggi            | 0.90        | 0.99   | 0.94     |
+| **Akurasi**       | **0.87625** |        |          |
 | **Macro Avg**     | 0.89        | 0.88   | 0.88     |
 | **Weighted Avg**  | 0.88        | 0.88   | 0.88     |
 
@@ -290,15 +277,15 @@ Hasil model Decision Tree pada data uji menunjukkan akurasi 98.275%. Berikut ada
 
 #### Classification Report
 
-| Kelas             | Precision   | Recall | F1-Score |
-| ----------------- | ----------- | ------ | -------- |
-| Normal            | 0.98        | 0.97   | 0.98     |
-| Stunting          | 0.99        | 0.99   | 0.99     |
-| Severely Stunting | 0.97        | 0.99   | 0.98     |
-| Tinggi            | 0.98        | 1.00   | 0.99     |
-| **Akurasi**       | **0.98275** |        |          |
-| **Macro Avg**     | 0.98        | 0.98   | 0.98     |
-| **Weighted Avg**  | 0.98        | 0.98   | 0.98     |
+| Kelas             | Precision  | Recall | F1-Score |
+| ----------------- | ---------- | ------ | -------- |
+| Normal            | 0.99       | 0.96   | 0.98     |
+| Stunting          | 0.99       | 0.99   | 0.99     |
+| Severely Stunting | 0.97       | 0.98   | 0.98     |
+| Tinggi            | 0.98       | 1.00   | 0.99     |
+| **Akurasi**       | **0.9825** |        |          |
+| **Macro Avg**     | 0.98       | 0.98   | 0.98     |
+| **Weighted Avg**  | 0.98       | 0.98   | 0.98     |
 
 ### Perbandingan Akurasi Model
 
@@ -306,9 +293,9 @@ Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih
 
 | Model         | Akurasi Data Latih | Akurasi Data Uji |
 | :------------ | :----------------- | :--------------- |
-| Random Forest | 1.0                | 0.9865           |
-| XGBoost       | 0.888813           | 0.87975          |
-| Decision Tree | 1.0                | 0.98275          |
+| Random Forest | 1.0                | 0.9895           |
+| XGBoost       | 0.888813           | 0.87625          |
+| Decision Tree | 1.0                | 0.9825           |
 
 Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%. Hal ini menunjukkan bahwa model ini memiliki kemampuan generalisasi yang baik terhadap data yang tidak terlihat sebelumnya. Meskipun Decision Tree juga menunjukkan akurasi yang tinggi pada data uji, Random Forest lebih stabil dan kurang rentan terhadap overfitting.
 
