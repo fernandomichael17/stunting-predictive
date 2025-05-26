@@ -60,7 +60,8 @@ Berdasarkan hasil pengecekan menggunakan `df.isna().sum()`, diketahui bahwa tida
 - Fitur Umur (bulan): Tidak ditemukan outlier.
 - Fitur Tinggi Badan (cm): Ditemukan 38 outlier. Outlier ini kemudian dihapus pada tahap Data Preparation.
 
-![Outlier](https://private-user-images.githubusercontent.com/113835044/447212048-a8a367cc-581a-481e-aff4-38305386d5a5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDQ4LWE4YTM2N2NjLTU4MWEtNDgxZS1hZmY0LTM4MzA1Mzg2ZDVhNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZGJlYjQwMmNiYzI4MjM0YmMyOGZjMDBiZWViYjhmOWRjYjE2YzQ3ZTc0M2EwYzdiOTUzNWY5ZjVkNzVkMTM5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.RAHA2skgicbso6La68pcNH1iEy1ruB2g_iUDHa9sEMQ)
+![boxplot](https://github.com/user-attachments/assets/35b55873-9a68-4161-883d-ec52768142b0)
+
 Outlier diidentifikasi dengan metode IQR, menggunakan rumus:
 
 ```
@@ -74,19 +75,24 @@ Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Ba
 #### Univariate Analysis
 
 - Jenis Kelamin: Distribusi cukup seimbang, dengan 'perempuan' sebanyak 60964 (50.4%) dan 'laki-laki' sebanyak 59997 (49.6%).
-  ![Jenis Kelamin](https://private-user-images.githubusercontent.com/113835044/447212047-ae7617f3-1e2a-4bf1-8c21-0414f2e5a78f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDQ3LWFlNzYxN2YzLTFlMmEtNGJmMS04YzIxLTA0MTRmMmU1YTc4Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMTg5MWYzYWVmNGU3NTMzYzRmNzA0ZjE2NjVjMGZjZDMwMDc0N2MxZWI0N2E2NThmZmE3M2U5ZDliNmVkMjRkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ML_-6GQpY_aPErUKE-uK7VzgavMifqPhxjPUaKU-s_k)
+  ![univariate](https://github.com/user-attachments/assets/27d15413-7d60-43bc-aa51-99b06b0c7968)
+
 - Status Gizi (Target): Distribusi kelas tidak seimbang. Sebelum sampling, kelas `normal` mendominasi (56.0%), diikuti oleh `severely stunted` (16.4%), `tinggi` (16.2%), dan `stunted` (11.4%). Ketidakseimbangan ini diatasi pada tahap Data Preparation dengan melakukan sampling.<br>
-  ![Status Gizi](https://private-user-images.githubusercontent.com/113835044/447212050-1a575a07-e9f1-4c02-9a96-dbb0d31686a3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDUwLTFhNTc1YTA3LWU5ZjEtNGMwMi05YTk2LWRiYjBkMzE2ODZhMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMTdhMGE3NjI2NGM1ZGE0N2FjNmUyYzczODMxZGFjNTFmNWEwNjM2Zjk1MTQ1NWYzYTc4MzMzZTBiODU2MGJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VunCoq0BYMb0Nuc9ybg8l_60SmutVk1PfZbU9RxfXiQ)
+  ![pie](https://github.com/user-attachments/assets/43659aeb-f225-4a58-9e96-8cb1fc40f573)
+
 - Umur (bulan): Distribusi umur balita tampak relatif seragam dengan beberapa penurunan pada interval tertentu.
 - Tinggi Badan (cm): Distribusi tinggi badan mendekati bentuk normal, dengan puncak di sekitar 80-100 cm.
-  ![Tinggi Badan](https://private-user-images.githubusercontent.com/113835044/447212049-86c60b4b-4d08-4064-9369-603bd02d2ec8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDQ5LTg2YzYwYjRiLTRkMDgtNDA2NC05MzY5LTYwM2JkMDJkMmVjOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NTlkNWE0OWU3MTNkYTFlYjM3MzFiNDhiZGI4N2Q1ZmQ0NjIyNmFjNTkxODAwMTBhNWZiNmNhMDRjOGIzYmNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.f0WDBZ7uxhy5fQjf8DUOG7n5UtAF1xLalmwooxvpmus)
+  ![hist](https://github.com/user-attachments/assets/f04e1c59-03ee-4e07-8734-e2a49b80e741)
+
 
 #### Multivariate Analysis
 
-- Dari countplot antara `Status Gizi` dan `Jenis Kelamin`, terlihat bahwa proporsi status gizi pada laki-laki dan perempuan relatif seimbang. Namun, terdapat perbedaan kecil pada kelas `stunted`. `tinggi` dan `normal`, di mana lebih banyak perempuan dibandingkan laki-laki. Namun seperti pada analisis univariate, kelas `normal` mendominasi.
-  ![Status Gizi vs Jenis Kelamin](https://private-user-images.githubusercontent.com/113835044/447212053-c8e962ed-81ce-460b-a1db-f37a0285ae41.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDUzLWM4ZTk2MmVkLTgxY2UtNDYwYi1hMWRiLWYzN2EwMjg1YWU0MS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lN2UxNDNhYmVmYmYyNjQzNTU0Mzg5YjkwZTk2ZjM5MWE4MGVlZWEyYTNkYzdmN2MzNWQzOGJjYWU5NmUwYTkzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.sxCUGs2ZXCH3wX9YtMhsk23sTJg9F1SrXyg4Mo8v9v4)
-- Pairplot menunjukkan adanya korelasi positif antara fitur Umur (bulan) dan Tinggi Badan (cm), yang mengindikasikan bahwa seiring bertambahnya usia balita, tinggi badannya cenderung meningkat.
-  ![pairplot](https://private-user-images.githubusercontent.com/113835044/447212051-d1575f9c-852d-454b-9df9-1018dc69bda4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTcxODcsIm5iZiI6MTc0ODA1Njg4NywicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEyMDUxLWQxNTc1ZjljLTg1MmQtNDU0Yi05ZGY5LTEwMThkYzY5YmRhNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzIxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNDUzMDY1ZDFhZjEwMGYwNmU3MmI3OWFmMThiZDg2ZjNlZTlmMDc2N2JiMWNlYzIzYTBiMDU3NGFiZTM0YTgxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.bUEXKbwY4XeXL2-PIruUcKm8T-g9RoZx51XSRrHpWb4)
+- Dari countplot antara `Status Gizi` dan `Jenis Kelamin`, terlihat bahwa proporsi status gizi pada laki-laki dan perempuan relatif seimbang. Namun, terdapat perbedaan kecil pada kelas `stunted`. `tinggi` dan `normal`, di mana lebih banyak perempuan dibandingkan laki-laki. Namun seperti pada analisis univariate, kelas `normal` mendominasi. <br>
+  ![statusvsgender](https://github.com/user-attachments/assets/639c98bf-eeba-4301-9222-bf41f4dbda90)
+
+- Pairplot menunjukkan adanya korelasi positif antara fitur Umur (bulan) dan Tinggi Badan (cm), yang mengindikasikan bahwa seiring bertambahnya usia balita, tinggi badannya cenderung meningkat. <br>
+  ![pairplot](https://github.com/user-attachments/assets/21108c63-84b1-4de3-80fd-424f3722efb4)
+
 
 ---
 
@@ -96,6 +102,8 @@ Outlier dapat memengaruhi performa model dan interpretasi data. Kolom `Tinggi Ba
 
    - Fitur `Tinggi Badan (cm)` dibersihkan dari outlier menggunakan metode IQR (Interquartile Range).
    - Outlier dihapus untuk memastikan model tidak terpengaruh oleh nilai ekstrim yang dapat mengganggu proses pelatihan.
+     ![after_boxplot](https://github.com/user-attachments/assets/29094021-5609-4c97-bfb8-6f8c4658f565)
+
 
 2. **Encoding Data Kategorikal**:
 
@@ -233,7 +241,7 @@ Hasil model Random Forest pada data uji menunjukkan akurasi 98.65%. Berikut adal
 
 #### Confusion Matrix
 
-![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210781-c0bd6fa7-e9b8-4cf8-af44-44a76f064841.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTU4MzYsIm5iZiI6MTc0ODA1NTUzNiwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwNzgxLWMwYmQ2ZmE3LWU5YjgtNGNmOC1hZjQ0LTQ0YTc2ZjA2NDg0MS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZGE3MjM5ODg5N2RlMTE3NzJmOGZmMGEwY2ViNzgzNTljYzBlMTc3ZTk2NWY2MDA0NzczMTk4YTFmMzY2OTg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.B4X1jcB3w85tN0D-c_yZFQedo-2xul2sX73TT_oXsvU)
+![random_forest](https://github.com/user-attachments/assets/d54640a9-9e2c-42ed-bded-7311f9754673)
 
 #### Classification Report
 
@@ -253,7 +261,7 @@ Hasil model XGBoost pada data uji menunjukkan akurasi 87.975%. Berikut adalah ha
 
 #### Confusion Matrix
 
-![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210837-4207e71c-96eb-4352-b1cd-5406a181d012.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTU4MzYsIm5iZiI6MTc0ODA1NTUzNiwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwODM3LTQyMDdlNzFjLTk2ZWItNDM1Mi1iMWNkLTU0MDZhMTgxZDAxMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMjU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYTZiNWVlNTQ0N2VjODM0MWM5MDgxNDJmMTJhNzQ2ODBlYzQ0YWVkNWRiZGY2YzM2ZDcwYjFhMmU5NWQ3ZWNlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0KjVuivLkadTn1ealt8leh_11cBqRYn-vwv0PMj0CU4)
+![xgboost](https://github.com/user-attachments/assets/2ca4e7df-2d89-4334-9c56-dcc5cd91df13)
 
 #### Classification Report
 
@@ -273,7 +281,7 @@ Hasil model Decision Tree pada data uji menunjukkan akurasi 98.275%. Berikut ada
 
 #### Confusion Matrix
 
-![Confusion Matrix](https://private-user-images.githubusercontent.com/113835044/447210838-c0f6ac0e-9dd4-4d53-a8f5-18b0d8ab67f0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwNTY3ODksIm5iZiI6MTc0ODA1NjQ4OSwicGF0aCI6Ii8xMTM4MzUwNDQvNDQ3MjEwODM4LWMwZjZhYzBlLTlkZDQtNGQ1My1hOGY1LTE4YjBkOGFiNjdmMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyNFQwMzE0NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MGU0MGU5YzVmZjlmNDA4NTJiOTY2NGYwNDg4ZjJmZDE0NmQyZTNhMjkxZGY5MzJkZTExMjA5MDFlYTVmYWU4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.dh_YDZcxEAXSQR5GmGrgCeB-ktQgtl6PKZW6ppfs2tk)
+![dtree](https://github.com/user-attachments/assets/1a208f8a-8739-4704-a8e1-e6ed41775f84)
 
 #### Classification Report
 
@@ -296,6 +304,8 @@ Tabel berikut menunjukkan perbandingan akurasi dari ketiga model pada data latih
 | Random Forest | 1.0                | 0.9895           |
 | XGBoost       | 0.888813           | 0.87625          |
 | Decision Tree | 1.0                | 0.9825           |
+
+![evaluasi](https://github.com/user-attachments/assets/3b646498-3da5-41aa-959c-d7c47d61c64e)
 
 Dari perbandingan di atas, model Random Forest memiliki akurasi tertinggi pada data uji, yaitu 98.65%. Hal ini menunjukkan bahwa model ini memiliki kemampuan generalisasi yang baik terhadap data yang tidak terlihat sebelumnya. Meskipun Decision Tree juga menunjukkan akurasi yang tinggi pada data uji, Random Forest lebih stabil dan kurang rentan terhadap overfitting.
 
